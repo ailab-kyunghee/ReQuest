@@ -2,7 +2,7 @@
 
 Official codebase for the ECCV 2026 paper:  
 **"ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA"**  
-[[Paper]](https://eccv.ecva.net/virtual/2026/poster/4667) [[arXiv]](https://arxiv.org/abs/2607.01737) [[Project Page]](https://geppa.github.io/ReQuest)
+[[Paper]](https://arxiv.org/abs/2607.01737)
 
 ---
 
@@ -251,11 +251,18 @@ If you find our work useful, please consider citing:
 
 ```bibtex
 @inproceedings{kim2026request,
-  title     = {ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA},
-  author    = {Kim, Minkuk and Yun, Suyong and Kim, Young Tae and Moon, Jinyoung and
-               Choi, Jinwoo and Kim, Seong Tae},
-  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
-  year      = {2026}
+  title     = {{ReQuest}: Rethinking-Based Question-Aware Frame
+               Selection for Long-Form Video {QA}},
+  author    = {Kim, Minkuk and Yun, Suyong and Kim, Young Tae and
+               Moon, Jinyoung and Choi, Jinwoo and Kim, Seong Tae},
+  booktitle = {Computer Vision -- ECCV 2026},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {17052},
+  pages     = {386--404},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2026},
+  doi       = {10.1007/978-3-032-37235-2_23}
 }
 ```
 
