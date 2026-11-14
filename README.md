@@ -101,7 +101,13 @@ lmms-eval and transformers releases are untested, and newer pyarrow needs numpy 
 lmms-eval 0.4.0 does not allow.
 
 lmms-eval downloads the benchmarks, and LLaVA-Video-7B-Qwen2 and BLIP are downloaded
-from Hugging Face, the first time they are used.
+from Hugging Face, the first time they are used. The downloads need a Hugging Face token,
+so log in first, and accept the terms of
+[LongVideoBench](https://huggingface.co/datasets/longvideobench/LongVideoBench) on its page:
+
+```bash
+huggingface-cli login
+```
 
 ---
 
@@ -143,9 +149,17 @@ huggingface-cli download suyong-3/ReQuest --repo-type dataset --local-dir data/p
 | `questions.parquet` | 83,421 | `question_id`; `video_id`; `video`, the path under the LLaVA-Video-178K root; `question`, the question with its options |
 | `segments.parquet` | 33,406 | `video_id`; `frame_segments`, the segment id of every 1 fps frame |
 
-> 📌 *Extract the LLaVA-Video-178K videos so that the `video` paths in `questions.parquet`
-> resolve under `data/LLaVA-Video-178K/`. The code that generated the pseudo-labels is not
-> part of this repository.*
+The questions use the videos of the `*_academic_v0_1` and `*_youtube_v0_1` subsets of
+LLaVA-Video-178K (230 archives, about 1.2 TB). Extract each archive inside its subset
+folder, so that the `video` paths in `questions.parquet` resolve under `data/LLaVA-Video-178K/`:
+
+```bash
+huggingface-cli download lmms-lab/LLaVA-Video-178K --repo-type dataset \
+  --include "*_academic_v0_1/*.tar.gz" "*_youtube_v0_1/*.tar.gz" --local-dir data/LLaVA-Video-178K
+cd data/LLaVA-Video-178K && for f in */*.tar.gz; do tar -xzf "$f" -C "$(dirname "$f")"; done
+```
+
+> 📌 *The code that generated the pseudo-labels is not part of this repository.*
 
 ---
 
