@@ -2,7 +2,7 @@
 
 Official codebase for the ECCV 2026 paper:  
 **"ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA"**  
-[[Paper]](https://arxiv.org/abs/2607.01737)
+[[Paper]](https://eccv.ecva.net/virtual/2026/poster/4667) [[arXiv]](https://arxiv.org/abs/2607.01737) [[Project Page]](https://geppa.github.io/ReQuest)
 
 ---
 
