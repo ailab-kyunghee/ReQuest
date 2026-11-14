@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "request-vqa"
+version = "0.1.0"
+description = "ReQuest: question-aware frame selection for long-form video QA (lmms-eval plugin)"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+# Pinned to the tested versions. Newer lmms-eval and transformers releases are
+# untested. lmms-eval 0.4.0 pins numpy 1.26.4, and newer pyarrow needs numpy 2.
+dependencies = [
+    "lmms_eval==0.4.0",
+    "transformers==4.39.3",
+    "accelerate==0.29.3",
+    "datasets==2.19.0",
+    "pyarrow==19.0.1",
+    "torch==2.5.1",
+    "decord",
+    "numpy",
+]
+
+[tool.setuptools.packages.find]
+include = ["request_vqa*"]
+
+[tool.setuptools.package-data]
+"request_vqa.tasks" = ["*/*.yaml"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

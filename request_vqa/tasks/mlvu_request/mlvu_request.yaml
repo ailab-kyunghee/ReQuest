@@ -1,0 +1,32 @@
+# lmms-eval's MLVU dev task, scored on the option letter the answer starts with.
+# The stock mlvu_dev compares the raw answer with the letter unless it contains
+# ")", so an answer like "C." is scored as wrong. Data, prompt and the per-task
+# average (m-avg) are the stock MLVU ones.
+dataset_path: sy1998/MLVU_dev
+dataset_kwargs:
+  token: True
+  cache_dir: mlvu
+  video: True
+generation_kwargs:
+  max_new_tokens: 16
+  temperature: 0
+  top_p: 1.0
+  num_beams: 1
+  do_sample: false
+task: mlvu_request
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.mlvu_doc_to_visual_dev
+doc_to_text: !function utils.mlvu_doc_to_text
+doc_to_target: "answer"
+process_results: !function utils.mlvu_process_results
+metric_list:
+  - metric: mlvu_percetion_score
+    aggregation: !function utils.mlvu_aggregate_results_dev
+    higher_is_better: true
+lmms_eval_specific_kwargs:
+  default:
+    pre_prompt: ""
+    post_prompt: "\nOnly give the best option.\nBest option: ("
+metadata:
+  - version: 0.0

@@ -1,0 +1,32 @@
+# lmms-eval's Video-MME task with the post-prompt lmms-eval gives LLaVA-Video
+# ("The best answer is:"). lmms-eval picks prompts by --model name, so without
+# this task llava_vid_request would get the generic default prompt. The data,
+# prompt builder and scoring are the stock Video-MME ones.
+dataset_path: lmms-lab/Video-MME
+dataset_kwargs:
+  token: True
+  cache_dir: videomme
+  video: True
+task: videomme_request
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.videomme_doc_to_visual
+doc_to_text: !function utils.videomme_doc_to_text
+doc_to_target: "answer"
+generation_kwargs:
+  max_new_tokens: 16
+  temperature: 0
+  top_p: 1.0
+  num_beams: 1
+  do_sample: false
+process_results: !function utils.videomme_process_results
+metric_list:
+  - metric: videomme_perception_score
+    aggregation: !function utils.videomme_aggregate_results
+    higher_is_better: true
+lmms_eval_specific_kwargs:
+  default:
+    pre_prompt: ""
+    post_prompt: "The best answer is:"
+metadata:
+  - version: 0.0
