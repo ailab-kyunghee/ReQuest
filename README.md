@@ -1,8 +1,24 @@
-# ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA (ECCV 2026)
+<div align="center">
 
-Official codebase for the ECCV 2026 paper:  
-**"ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA"**  
-[[Paper]](https://arxiv.org/abs/2607.01737)
+# ReQuest
+
+### Rethinking-based Question-Aware Frame Selection for Long-Form Video QA
+
+[Minkuk Kim](https://www.linkedin.com/in/minkuk-kim/)<sup>1*</sup>, Suyong Yun<sup>1*</sup>, Young Tae Kim<sup>1</sup>, Jinyoung Moon<sup>2</sup>, [Jinwoo Choi](https://www.linkedin.com/in/jinwoo-choi-36056795/)<sup>1†</sup>, [Seong Tae Kim](https://www.linkedin.com/in/seong-tae-kim-b2b04086/)<sup>1†</sup>
+
+<sup>1</sup>Kyung Hee University &nbsp;&nbsp; <sup>2</sup>Electronics and Telecommunications Research Institute (ETRI)
+
+<sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding authors
+
+[![ECCV 2026](https://img.shields.io/badge/ECCV-2026-1F4E8C)](https://eccv.ecva.net/)
+[![Project Page](https://img.shields.io/badge/Project-Page-A40F16)](https://geppa.github.io/ReQuest/)
+[![arXiv](https://img.shields.io/badge/arXiv-2607.01737-b31b1b)](https://arxiv.org/abs/2607.01737)
+
+</div>
+
+<p align="center">
+  <img src="https://geppa.github.io/ReQuest/static/images/teaser.jpg" width="90%" alt="ReQuest overview">
+</p>
 
 ---
 
