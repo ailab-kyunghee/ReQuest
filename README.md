@@ -250,12 +250,12 @@ the paper by up to about 0.4 points.
 If you find our work useful, please consider citing:
 
 ```bibtex
-@article{kim2026request,
-  title   = {ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA},
-  author  = {Kim, Minkuk and Yun, Suyong and Kim, Young Tae and Moon, Jinyoung and
-             Choi, Jinwoo and Kim, Seong Tae},
-  journal = {arXiv preprint arXiv:2607.01737},
-  year    = {2026}
+@inproceedings{kim2026request,
+  title     = {ReQuest: Rethinking-based Question-Aware Frame Selection for Long-Form Video QA},
+  author    = {Kim, Minkuk and Yun, Suyong and Kim, Young Tae and Moon, Jinyoung and
+               Choi, Jinwoo and Kim, Seong Tae},
+  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
+  year      = {2026}
 }
 ```
 
