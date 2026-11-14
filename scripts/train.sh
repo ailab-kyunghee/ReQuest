@@ -8,7 +8,7 @@
 #
 # Environment overrides:
 #   DATA      Pseudo-label dataset (default: data/pseudo_labels)
-#   FEATURES  Output of extract_features.sh (default: data/features)
+#   FEATURES  BLIP features (default: data/features)
 #   OUTPUT    Run directory (default: runs/selector)
 #
 # The run continues from OUTPUT/last.pt if it exists, so run the same command
