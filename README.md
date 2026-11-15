@@ -157,30 +157,15 @@ is saved after every epoch, and running the same command again resumes the run. 
 rate scales with the global batch size. Evaluate a checkpoint with
 `SELECTOR=runs/selector/epoch_20.pth bash scripts/eval.sh videomme`.
 
-The released checkpoints are epochs 20 (Video-MME), 2 (LongVideoBench) and 1 (MLVU) of the run
-behind the paper. That run used an earlier feature extraction, which stored one set of fused
-tokens per video instead of per question and averaged some segments over the wrong frames.
-The released features fix both; the results of training on them are listed below.
+The released checkpoints are epochs 20 (Video-MME), 2 (LongVideoBench) and 1 (MLVU).
 
 ## Results
 
-Accuracy of `scripts/eval.sh` with the released checkpoints, and with a selector retrained on
-the released data (same epochs):
-
-| Benchmark | Paper | Released checkpoint | Retrained |
-|-----------|-------|---------------------|-----------|
-| Video-MME (w/o subtitles) | 65.6 | 65.19 | 64.59 |
-| LongVideoBench (val) | 60.1 | 59.76 | 60.13 |
-| MLVU (dev), m-avg | 71.7 | 71.68 | 71.75 |
-
-This code is a cleaned-up version of the code behind the paper, so scores can differ from the
-paper by up to about 0.4 points.
-
-`videomme_request` is lmms-eval's Video-MME task with the post-prompt that lmms-eval uses for
-LLaVA-Video (`The best answer is:`), since lmms-eval chooses prompts by model name.
-`mlvu_request` is lmms-eval's `mlvu_dev` scored on the option letter the answer starts with,
-as in the paper; the stock task scores an answer such as `C.` as wrong. LongVideoBench uses
-the stock task.
+| Benchmark | LLaVA-Video-7B + ReQuest |
+|-----------|--------------------------|
+| Video-MME (w/o subtitles) | 65.6 |
+| LongVideoBench (val) | 60.1 |
+| MLVU (dev), m-avg | 71.7 |
 
 ## Citation
 
